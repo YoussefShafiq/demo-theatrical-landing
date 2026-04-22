@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-stone-50 text-stone-900;
+  }
+
+  ::selection {
+    @apply bg-red-700/20 text-stone-950;
+  }
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+
+  .glass {
+    @apply border border-red-900/10 bg-white/85 shadow-[0_20px_60px_-40px_rgba(127,29,29,0.35)];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition;
+  }
+
+  .btn-primary {
+    @apply btn bg-red-800 text-white hover:bg-red-700 active:bg-red-800/90;
+  }
+
+  .btn-ghost {
+    @apply btn border border-red-900/10 bg-white text-stone-900 hover:bg-stone-50;
+  }
+
+  .link {
+    @apply text-red-900/80 hover:text-red-900 transition;
+  }
+}
